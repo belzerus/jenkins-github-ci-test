@@ -3,6 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get -y install locales
 RUN apt-get -y install python
+RUN apt-get -y install python3
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
