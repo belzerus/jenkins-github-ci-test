@@ -1,10 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+
 '''
 Simple python example run from docker image
 '''
 
 
-def print_func(msg):
+def print_func(msg: str) -> bool:
     '''
     print_func()
         Print a hash guarded msg
