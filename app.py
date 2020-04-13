@@ -1,37 +1,58 @@
-#!/usr/bin/python
-'''
+#!/usr/bin/env python3
+
+"""
 Simple python example run from docker image
-'''
+"""
 
 
-def print_func(msg):
-    '''
+def print_func(msg: str) -> bool:
+    """
     print_func()
         Print a hash guarded msg
-    '''
+    """
 
     length = len(msg) + 4
     fullhashline = ""
     for _ in range(0, length):
-        fullhashline += '#'
+        fullhashline += "#"
 
     sparsehashline = "#"
     for _ in range(1, (length - 1)):
-        sparsehashline += ' '
-    sparsehashline += '#'
+        sparsehashline += " "
+    sparsehashline += "#"
 
-    print(''.join([fullhashline, '\n', fullhashline, '\n', sparsehashline,
-                   '\n', '# ', msg, ' #', '\n', sparsehashline, '\n',
-                   fullhashline, '\n', fullhashline]))
+    print(
+        "".join(
+            [
+                fullhashline,
+                "\n",
+                fullhashline,
+                "\n",
+                sparsehashline,
+                "\n",
+                "# ",
+                msg,
+                " #",
+                "\n",
+                sparsehashline,
+                "\n",
+                fullhashline,
+                "\n",
+                fullhashline,
+            ]
+        )
+    )
     return True
 
 
 def _main():
-    '''
+    """
     main() starts here..
-    '''
-    mymsg = "This is a very simple python application," \
-            " executed from a docker container.."
+    """
+    mymsg = (
+        "This is a very simple python application,"
+        " executed from a docker container.."
+    )
     print_func(mymsg)
 
 
